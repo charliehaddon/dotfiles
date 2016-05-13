@@ -1,0 +1,13 @@
+#!/bin/sh
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+xrdb ~/.Xresources &
+xfce4-panel &
+compton &
+setxkbmap gb &
+redshift &
+feh ~/wallpapers/heic0910e.tif --bg-fill &

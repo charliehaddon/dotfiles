@@ -1,0 +1,83 @@
+Xft.lcdfilter:          lcddefault
+Xft.antialias:          true
+Xft.autohint:           0
+Xft.hinting:            true
+Xft.hintstyle:          hintslight
+Xft.dpi:                96
+
+*.font:                 xft:Roboto\ Mono:size=8, \
+                        xft:Roboto\ Mono\ for\ Powerline, \
+                        xft:Terminus, \
+                        xft:Inconsolata\ for\ Powerline, \
+                        xft:FontAwesome
+Emacs.font:             Roboto\ Mono:size=11
+
+URxvt.scrollBar:        false
+URxvt.scrollstyle:      plain
+URxvt.scrollBar_right:  true
+URxvt.saveLines:        8192
+URxvt.geometry:         86x24
+
+rofi.fixed-num-lines:   true
+rofi.lines:             55
+rofi.width:             20
+rofi.bw:                0
+rofi.padding:           7
+rofi.font:              Roboto Mono 8
+rofi.separator-style:   none
+rofi.scrollbar-width:   0
+rofi.location:          3
+rofi.terminal:          "st"
+
+#define base00          #181818
+#define base01          #d8d8d8
+
+#define base02          #2d2d2d
+#define base03          #d64937
+#define base04          #5ab348
+#define base05          #ffcd70
+#define base06          #62bfd2
+#define base07          #c57bcc
+#define base08          #64c2a9
+#define base09          #798086
+
+#define base0A          #3c3c3c
+#define base0B          #e25e4e
+#define base0C          #90d089
+#define base0D          #ffd999
+#define base0E          #acfcfd
+#define base0F          #dda1e2
+#define base10          #a0e2d0
+#define base11          #e1e2e3
+
+! Rofi row colours
+! State                 bg      fg      bgalt   hlbg    hlfg
+rofi.color-normal:      base02, base01, base02, base03, base01
+rofi.color-urgent:      base02, base01, base02, base03, base01
+rofi.color-active:      base02, base01, base02, base03, base01
+
+! Rofi window colours
+!                       bg      border
+rofi.color-window:      base02, base00
+
+*.foreground:           base01
+*.background:           base00
+*.cursorColor:          base11
+
+*.color0:               base02
+*.color1:               base03
+*.color2:               base04
+*.color3:               base05
+*.color4:               base06
+*.color5:               base07
+*.color6:               base08
+*.color7:               base09
+
+*.color8:               base0A
+*.color9:               base0B
+*.color10:              base0C
+*.color11:              base0D
+*.color12:              base0E
+*.color13:              base0F
+*.color14:              base10
+*.color15:              base11
