@@ -1,10 +1,10 @@
--- module XMonad.Config (defaultConfig) where
-
 import XMonad
-
 import XMonad.StackSet as W
-import System.Exit
+import XMonad.Hooks.ManageDocks
+import XMonad.Layout.Fullscreen
+import XMonad.Hooks.ManageHelpers
 
+import System.Exit
 import qualified Data.Map as M
 
 -- Add new options by editing main, change existing ones below.
@@ -21,9 +21,9 @@ main = do
     , keys               = myKeys
     --, mouseBindings      = myMouseBindings
       
-    --, layoutHook         = myLayout
+    , layoutHook         = myLayoutHook
     , manageHook         = myManageHook
-    --, handleEventHook    = myEventHook
+    , handleEventHook    = myEventHook
     --, logHook            = myLogHook
     {-, startupHook        = myStartupHook -}}
 
@@ -57,6 +57,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   , ((modMask,               xK_period), sendMessage (IncMasterN 1))
   , ((modMask,               xK_comma ), sendMessage (IncMasterN (-1)))
+  , ((modMask,               xK_b     ), sendMessage ToggleStruts)
 
   , ((modMask .|. shiftMask, xK_e     ), io (exitWith ExitSuccess))
   , ((modMask .|. shiftMask, xK_r     ), spawn resetCommand) ] ++
@@ -68,5 +69,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   where resetCommand = "if type xmonad; then xmonad --recompile && " ++
                        "xmonad --restart; else xmessage xmonad not found"
 
-myManageHook = composeAll
-  [  ]
+myManageHook = manageDocks
+  <+> fullscreenManageHook
+  <+> (isFullscreen --> doFullFloat)
+myLayoutHook = fullscreenFull $ avoidStruts (tall)
+  where tall = Tall 1 (3/100) (1/2)
+myEventHook  = docksEventHook <+> fullscreenEventHook

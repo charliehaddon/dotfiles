@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Roboto Mono:size=11";
+static char font[] = "Roboto Mono for Powerline:size=11";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 static char *utmp = NULL;
