@@ -8,7 +8,7 @@ import System.Exit
 import qualified Data.Map as M
 
 -- Add new options by editing main, change existing ones below.
-main = do
+main =
   xmonad $ defaultConfig
     { terminal           = myTerminal
     , focusFollowsMouse  = myFocusFollowsMouse
@@ -37,7 +37,7 @@ myNormalBorderColour  = "#2d2d2d"
 myFocusedBorderColour = "#d64937"
 
 -- This key config overrides all pre-existing bindings 
-myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
+myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
   , ((modMask,               xK_d     ), spawn "rofi -show run")
   , ((modMask .|. shiftMask, xK_q     ), kill)
@@ -59,7 +59,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask,               xK_comma ), sendMessage (IncMasterN (-1)))
   , ((modMask,               xK_b     ), sendMessage ToggleStruts)
 
-  , ((modMask .|. shiftMask, xK_e     ), io (exitWith ExitSuccess))
+  , ((modMask .|. shiftMask, xK_e     ), io exitSuccess)
   , ((modMask .|. shiftMask, xK_r     ), spawn resetCommand) ] ++
   -- Workspace switching. Mod + [1..9] = switch to workspace
   --                      Mod + shift + [1..9] = move window to workspace
@@ -72,6 +72,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 myManageHook = manageDocks
   <+> fullscreenManageHook
   <+> (isFullscreen --> doFullFloat)
-myLayoutHook = fullscreenFull $ avoidStruts (tall)
+myLayoutHook = fullscreenFull $ avoidStruts tall
   where tall = Tall 1 (3/100) (1/2)
 myEventHook  = docksEventHook <+> fullscreenEventHook
