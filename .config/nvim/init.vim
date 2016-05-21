@@ -39,3 +39,6 @@ filetype plugin indent on
 
 set rtp+=~/.vim/colors
 colorscheme jellybeans
+hi Normal ctermbg=none
+hi LineNr ctermbg=none ctermfg=grey
+hi NonText ctermbg=none
