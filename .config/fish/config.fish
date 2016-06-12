@@ -18,3 +18,13 @@ if status --is-interactive
       tmux
    end
 end
+
+# Launch Battle.net in wine
+function battlenet
+  wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Battle.net/Battle.net\ Launcher.exe
+end
+
+# Launch Steam in wine
+function steam-wine
+  wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/Steam.exe
+end

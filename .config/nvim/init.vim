@@ -34,10 +34,11 @@ call vundle#begin()
     let g:syntastic_check_on_open=1
     let g:syntastic_check_on_wq=0
     map <leader>s :SyntasticToggleMode<cr>
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-repeat'
 call vundle#end()
 filetype plugin indent on
 
-set rtp+=~/.vim/colors
 colorscheme jellybeans
 hi Normal ctermbg=none
 hi LineNr ctermbg=none ctermfg=grey

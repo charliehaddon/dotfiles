@@ -9,29 +9,29 @@
 			</item>
 			<item label="Python">
 				<action name="Execute">
-					<execute>xterm -e python</execute>
+					<execute>st -e python</execute>
 				</action>
 			</item>
 			<item label="Python (v2.7)">
 				<action name="Execute">
-					<execute>xterm -e python2.7</execute>
+					<execute>st -e python2.7</execute>
 				</action>
 			</item>
 		</menu>
 		<menu id="2" label="Editors">
 			<item label="Nano">
 				<action name="Execute">
-					<execute>xterm -e nano</execute>
+					<execute>st -e nano</execute>
 				</action>
 			</item>
 			<item label="Vi">
 				<action name="Execute">
-					<execute>xterm -e vi</execute>
+					<execute>st -e vi</execute>
 				</action>
 			</item>
 			<item label="Vim">
 				<action name="Execute">
-					<execute>xterm -e vim</execute>
+					<execute>st -e vim</execute>
 				</action>
 			</item>
 		</menu>
@@ -54,7 +54,7 @@
 		<menu id="7" label="Multimedia">
 			<item label="ALSA mixer">
 				<action name="Execute">
-					<execute>xterm -e alsamixer</execute>
+					<execute>st -e alsamixer</execute>
 				</action>
 			</item>
 			<item label="Audio Mixer">
@@ -81,12 +81,12 @@
 			</item>
 			<item label="FTP">
 				<action name="Execute">
-					<execute>xterm -e ftp</execute>
+					<execute>st -e ftp</execute>
 				</action>
 			</item>
 			<item label="Mail">
 				<action name="Execute">
-					<execute>xterm -e mail</execute>
+					<execute>st -e mail</execute>
 				</action>
 			</item>
 			<item label="Mail Reader">
@@ -101,17 +101,17 @@
 			</item>
 			<item label="Talk">
 				<action name="Execute">
-					<execute>xterm -e talk</execute>
+					<execute>st -e talk</execute>
 				</action>
 			</item>
 			<item label="Telnet">
 				<action name="Execute">
-					<execute>xterm -e telnet</execute>
+					<execute>st -e telnet</execute>
 				</action>
 			</item>
 			<item label="TkVNC">
 				<action name="Execute">
-					<execute>xterm -e tkvnc</execute>
+					<execute>st -e tkvnc</execute>
 				</action>
 			</item>
 			<item label="Web Browser">
@@ -140,19 +140,19 @@
 		<menu id="4" label="Science">
 			<item label="bc">
 				<action name="Execute">
-					<execute>xterm -e bc</execute>
+					<execute>st -e bc</execute>
 				</action>
 			</item>
 			<item label="dc">
 				<action name="Execute">
-					<execute>xterm -e dc</execute>
+					<execute>st -e dc</execute>
 				</action>
 			</item>
 		</menu>
 		<menu id="19" label="Shells">
 			<item label="GIT">
 				<action name="Execute">
-					<execute>xterm -e git</execute>
+					<execute>st -e git</execute>
 				</action>
 			</item>
 			<item label="Thunar File Manager">
@@ -177,12 +177,12 @@
 			</item>
 			<item label="UXTerm">
 				<action name="Execute">
-					<execute>uxterm</execute>
+					<execute>ust</execute>
 				</action>
 			</item>
 			<item label="Xterm">
 				<action name="Execute">
-					<execute>xterm</execute>
+					<execute>st</execute>
 				</action>
 			</item>
 		</menu>
@@ -268,22 +268,22 @@
 			</item>
 			<item label="pstree">
 				<action name="Execute">
-					<execute>xterm -e pstree.x11</execute>
+					<execute>st -e pstree.x11</execute>
 				</action>
 			</item>
 			<item label="pstree">
 				<action name="Execute">
-					<execute>xterm -e /usr/bin/pstree.x11</execute>
+					<execute>st -e /usr/bin/pstree.x11</execute>
 				</action>
 			</item>
 			<item label="pstree">
 				<action name="Execute">
-					<execute>xterm -e pstree</execute>
+					<execute>st -e pstree</execute>
 				</action>
 			</item>
 			<item label="Top">
 				<action name="Execute">
-					<execute>xterm -e top</execute>
+					<execute>st -e top</execute>
 				</action>
 			</item>
 		</menu>
@@ -300,7 +300,7 @@
 			</item>
 			<item label="Info">
 				<action name="Execute">
-					<execute>xterm -e info</execute>
+					<execute>st -e info</execute>
 				</action>
 			</item>
 			<item label="Terminal Emulator">

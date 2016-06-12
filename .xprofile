@@ -5,8 +5,9 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+export STEAM_RUNTIME=0 &
+xset m 1/2 1
 xrdb ~/.Xresources &
-xfce4-panel &
 compton &
 setxkbmap gb &
 redshift &
