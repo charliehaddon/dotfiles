@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
 # this is a simple config for herbstluftwm
-
 hc() {
     herbstclient "$@"
 }
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
+# Launch programs
 
 # remove all existing keybindings
 hc keyunbind --all
@@ -18,10 +17,13 @@ hc keyunbind --all
 Mod=Mod1    # Use alt as the main modifier
 #Mod=Mod4   # Use the super key as the main modifier
 
-hc keybind $Mod-Shift-q quit
+# Spawn programs
+hc keybind $Mod-d spawn rofi -show run
+hc keybind $Mod-Return spawn st
+
+hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
-hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Shift-q close
 
 # basic movement
 # focusing clients
@@ -82,7 +84,7 @@ hc keybind $Mod-comma  use_index -1 --skip-visible
 
 # layouting
 hc keybind $Mod-r remove
-hc keybind $Mod-s floating toggle
+hc keybind $Mod-q floating toggle
 hc keybind $Mod-f fullscreen toggle
 hc keybind $Mod-p pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
@@ -159,10 +161,12 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 # or simply:
 # hc detect_monitors
 
-# find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" $monitor &
-done
+# use yabar
+{
+  pids=()
+  hc pad 0 20 0 0
+  yabar & 
+  pids+=( $! )
+  herbstclient -w 'quit_panel|reload'
+  kill ${pids[@]}
+}&
