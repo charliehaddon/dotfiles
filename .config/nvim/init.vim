@@ -16,6 +16,8 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+nnoremap <leader>l :noh<cr>
+
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()

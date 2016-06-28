@@ -2,32 +2,41 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdbool.h>
+
+const char *activeColour = "#64c2a9";
+const char *activeUnderline = "single";
+const char *spacerString = "  ";
 
 int main(int argc, char **argv){
-  int c;
+  int opt;
   char *indiciesString;
   char *index;
   int indicies[64];
   int numIndicies = 0;
+  bool yabar = false;
 
   /* Loop through command-line arguments */
-  while ((c = getopt (argc, argv, "i:")) != -1)
-    switch (c){
-      case 'i': 
+  while ((opt = getopt (argc, argv, "yi:")) != -1)
+    switch (opt){
+      case 'y':
+        yabar = true;
+        break;
+      case 'i':
         indiciesString = optarg;
         break;
       case '?':
         if (optopt == 'i')
-          fprintf (stderr, 
-              "Option -%c takes a comma-separated list of tag idicies.\n", 
-              optopt);
+          fprintf (stderr,
+            "Option -%c takes a comma-separated list of tag indicies.\n",
+            optopt);
         else
           fprintf (stderr, "Unknown option -%c.\n", optopt);
         return EXIT_FAILURE;
       default:
         return EXIT_FAILURE;
     }
-  
+
   /* Break index string into array */
   index = strtok (indiciesString, ",");
   for (int i = 0; index != NULL; i++){
@@ -35,7 +44,7 @@ int main(int argc, char **argv){
     index = strtok (NULL, ",");
     numIndicies += 1;
   }
-  
+
   FILE *pipeOut;
   char buffer[512];
   char tagString[512] = "";
@@ -59,16 +68,32 @@ int main(int argc, char **argv){
     fprintf (stderr, "Pipe failed to close!\n");
     return EXIT_FAILURE;
   }
- 
+
   /* Break string into tag array */
   tag = strtok (tagString, "\t");
   for (int i = 0; tag != NULL; i++){
     tags[i] = tag;
     tag = strtok (NULL, "\t");
   }
- 
-  for (int i = 0; i < numIndicies; i++){
-    printf ("%s\n", tags[indicies[i]]);
+  
+  /* Print specified tags */
+  if (yabar == false){
+    for (int i = 0; i < numIndicies; i++){
+      printf ("%s\n", tags[indicies[i]]);
+    }
+  } else {
+    /* Formatted output for yabar */
+    for (int i = 0; i < numIndicies; i++){
+      char *currentTag = tags[indicies[i]];
+      char *currentTagName = tags[indicies[i]] + 1;
+      if (currentTag[0] == '#'){
+        printf ("<span underline=\"%s\" underline_color=\"%s\">%s</span>%s",
+          activeUnderline, activeColour, currentTagName, spacerString);
+      } else if (currentTag[0] == ':'){
+        printf ("%s%s", currentTagName, spacerString);
+      }
+    }
+    printf ("\n");
   }
 
   return EXIT_SUCCESS;
