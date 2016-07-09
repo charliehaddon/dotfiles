@@ -2,10 +2,10 @@ set shell=/bin/bash
 set rtp+=~/.vim
 syntax on
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
-set softtabstop=2
+set softtabstop=4
 
 set relativenumber
 set number
@@ -15,6 +15,14 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+
+set splitbelow
+set splitright
 
 nnoremap <leader>l :noh<cr>
 
@@ -38,6 +46,7 @@ call vundle#begin()
     map <leader>s :SyntasticToggleMode<cr>
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-repeat'
+  Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 filetype plugin indent on
 
