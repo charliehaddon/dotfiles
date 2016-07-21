@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "Roboto Mono for Powerline:size=11";
+static char font[] = "Roboto Mono:size=11";
 static int borderpx = 2;
 static char shell[] = "/bin/sh";
 static char *utmp = NULL;
@@ -62,11 +62,11 @@ static unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-        "#2d2d2d", /* black   */
+    "#2c2f3a", /* black   */
 	"#d64937", /* red     */
 	"#5ab348", /* green   */
 	"#ffcd70", /* yellow  */
-	"#62bfd2", /* blue    */
+	"#5294e2", /* blue    */
 	"#c57bcc", /* magenta */
 	"#64c2a9", /* cyan    */
 	"#798086", /* grey    */
@@ -84,8 +84,8 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#181818",
-        "#d8d8d8",
+	"#16171d",
+    "#d8d8d8",
 };
 
 

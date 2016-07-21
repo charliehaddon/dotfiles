@@ -19,7 +19,7 @@ URxvt.saveLines:        8192
 URxvt.geometry:         86x24
 
 rofi.fixed-num-lines:   true
-rofi.lines:             55
+rofi.lines:             62
 rofi.width:             20
 rofi.bw:                0
 rofi.padding:           7
@@ -29,14 +29,17 @@ rofi.scrollbar-width:   0
 rofi.location:          3
 rofi.terminal:          "st"
 
-#define base00          #181818
+dmenu.font:             "Roboto Mono:pixelsize=12"
+dmenu.height:           18
+
+#define base00          #16171d
 #define base01          #d8d8d8
 
-#define base02          #2d2d2d
+#define base02          #2c2f3a
 #define base03          #d64937
 #define base04          #5ab348
 #define base05          #ffcd70
-#define base06          #62bfd2
+#define base06          #5294e2
 #define base07          #c57bcc
 #define base08          #64c2a9
 #define base09          #798086
@@ -52,13 +55,19 @@ rofi.terminal:          "st"
 
 ! Rofi row colours
 ! State                 bg      fg      bgalt   hlbg    hlfg
-rofi.color-normal:      base02, base01, base02, base03, base01
-rofi.color-urgent:      base02, base01, base02, base03, base01
-rofi.color-active:      base02, base01, base02, base03, base01
+rofi.color-normal:      base00, base01, base00, base06, base01
+rofi.color-urgent:      base00, base01, base00, base06, base01
+rofi.color-active:      base00, base01, base00, base06, base01
 
 ! Rofi window colours
 !                       bg      border
-rofi.color-window:      base02, base00
+rofi.color-window:      base00, base00
+
+! Dmenu
+dmenu.selforeground:    base01
+dmenu.selbackground:    base06
+dmenu.foreground:   base01
+dmenu.background:   base02
 
 *.foreground:           base01
 *.background:           base00

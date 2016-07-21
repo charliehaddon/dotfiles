@@ -9,7 +9,8 @@ export STEAM_RUNTIME=0 &
 export TERMINAL=st &
 xset m 1/2 1
 xrdb ~/.Xresources &
-compton &
 setxkbmap gb &
 redshift &
-feh ~/wallpapers/heic0910e.tif --bg-fill &
+hsetroot -solid #000000 &
+feh ~/wallpapers/nebula.tif --bg-fill &
+compton &

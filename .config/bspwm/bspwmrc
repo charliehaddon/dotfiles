@@ -1,26 +1,22 @@
-#!/bin/sh
+#! /bin/sh
 
-# Configure
-BORDER_WIDTH=4
-GAP_WIDTH=64
+yabar &
+sxhkd &
+stalonetray &
 
-BORDER_COLOUR="#585858"
-BORDER_COLOUR_FOCUSED="#86c1b9"
+bspc config border_width    2
+bspc config window_gap      12
+bspc config top_padding     19 
 
-BACKGROUND_COLOUR="#000000"
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_by_distance    true
+bspc config history_aware_focus  true
 
-# Execute
-bspc config border_width		$BORDER_WIDTH
-bspc config window_gap			$GAP_WIDTH
+bspc monitor -d 1 2 3 4 5 6 7 8 9
 
-bspc config split_ratio         	0.50
-bspc config borderless_monocle  	true
-bspc config gapless_monocle     	true
-bspc config focus_by_distance   	true
-
-bspc config normal_border_color 	$BORDER_COLOUR
-bspc config focused_border_color	$BORDER_COLOUR_FOCUSED
-
-bspc monitor -d				1 2 3 4 5 6 7 8 9
-
-hsetroot -solid			    	$BACKGROUND_COLOUR
+bspc config normal_border_color     "#798086"
+bspc config active_border_color     "#d8d8d8"
+bspc config focused_border_color    "#92bbed"
+bspc config presel_feedback_color   "#92bbed"
