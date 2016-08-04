@@ -11,6 +11,4 @@ xset m 1/2 1
 xrdb ~/.Xresources &
 setxkbmap gb &
 redshift &
-hsetroot -solid #000000 &
-feh ~/wallpapers/nebula.tif --bg-fill &
-compton &
+sxhkd &

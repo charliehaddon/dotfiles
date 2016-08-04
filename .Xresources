@@ -29,8 +29,7 @@ rofi.scrollbar-width:   0
 rofi.location:          3
 rofi.terminal:          "st"
 
-dmenu.font:             "Roboto Mono:pixelsize=12"
-dmenu.height:           18
+dmenu.font:             "Roboto:pixelsize=14"
 
 #define base00          #16171d
 #define base01          #d8d8d8
