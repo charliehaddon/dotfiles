@@ -7,6 +7,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 export STEAM_RUNTIME=0 &
 export TERMINAL=st &
+export QT_STYLE_OVERRIDE=gtk2 &
 xset m 1/2 1
 xrdb ~/.Xresources &
 setxkbmap gb &

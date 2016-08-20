@@ -11,6 +11,8 @@ set relativenumber
 set number
 set numberwidth=4
 
+set textwidth=80
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -54,3 +56,5 @@ colorscheme jellybeans
 hi Normal ctermbg=none
 hi LineNr ctermbg=none ctermfg=grey
 hi NonText ctermbg=none
+
+match ErrorMsg '\%>81v.\+'

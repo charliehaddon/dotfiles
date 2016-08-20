@@ -1,10 +1,10 @@
 #! /bin/sh
 
 yabar &
+stalonetray &
 feh ~/wallpapers/nebula.tif --bg-fill &
 compton &
 lxpolkit &
-stalonetray &
 volumeicon &
 
 bspc config border_width    2
