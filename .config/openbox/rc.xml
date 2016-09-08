@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>CustomNumix</name>
+    <name>Arc-Dark</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -178,23 +178,6 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- Keybinds for rofi -->
-    <keybind key="A-d">
-      <action name="Execute">
-        <command>rofi -show run</command>
-      </action>
-    </keybind>
-    <keybind key="A-S-d">
-      <action name="Execute">
-        <command>rofi -show window</command>
-      </action>
-    </keybind>
-    <!-- Launch st -->
-    <keybind key="A-Return">
-      <action name="Execute">
-        <command>st</command>
-      </action>
-    </keybind>
     <!-- Fullscreen -->
     <keybind key="A-f">
       <action name="ToggleFullscreen"/>

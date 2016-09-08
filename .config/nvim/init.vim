@@ -31,24 +31,32 @@ nnoremap <leader>l :noh<cr>
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype off
 call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'vim-airline/vim-airline'
+    Plugin 'VundleVim/Vundle.vim'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
-    let g:airline_theme='powerlineish'
-    let g:airline_powerline_fonts=1
-  Plugin 'scrooloose/syntastic'
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_always_populate_loc_list=1
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_check_on_open=1
-    let g:syntastic_check_on_wq=0
-    map <leader>s :SyntasticToggleMode<cr>
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-repeat'
-  Plugin 'sheerun/vim-polyglot'
+        let g:airline_theme='powerlineish'
+        let g:airline_powerline_fonts=1
+        set laststatus=2
+    Plugin 'scrooloose/syntastic'
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
+        let g:syntastic_always_populate_loc_list=1
+        let g:syntastic_auto_loc_list=1
+        let g:syntastic_check_on_open=1
+        let g:syntastic_check_on_wq=0
+        map <leader>s :SyntasticToggleMode<cr>
+    Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-repeat'
+    Plugin 'sheerun/vim-polyglot'
+    Plugin 'godlygeek/tabular'
+    Plugin 'plasticboy/vim-markdown'
+        let g:vim_markdown_math=1
+    Plugin 'SirVer/ultisnips'
+        let g:UltiSnipsExpandTrigger="<tab>"
+        let g:UltiSnipsJumpForwardTrigger="<c-b>"
+        let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 call vundle#end()
 filetype plugin indent on
 

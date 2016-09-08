@@ -1,11 +1,11 @@
 #! /bin/sh
 
 yabar &
-stalonetray &
-feh ~/wallpapers/nebula.tif --bg-fill &
+~/scripts/bspwmtray.sh &
+feh ~/wallpapers/win3_1.png --bg-fill &
 compton &
 lxpolkit &
-volumeicon &
+sxhkd &
 
 bspc config border_width    2
 bspc config window_gap      12
